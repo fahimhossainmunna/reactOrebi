@@ -4,6 +4,7 @@ import Policy from '../layout/Policy'
 import Ads from '../layout/Ads'
 import NewArrivals from '../layout/NewArrivals'
 import OurBestsellers from '../layout/OurBestsellers'
+import AdsTwo from '../layout/AdsTwo'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
    <Ads/>
    <NewArrivals/>
    <OurBestsellers/>
+   <AdsTwo/>
    </>
   )
 }

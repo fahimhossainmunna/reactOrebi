@@ -3,10 +3,10 @@ import React from "react";
 import Container from "../Container";
 import Flex from "../Flex";
 import Product from "../Product";
-import Wacth from "/src/assets/wacth.png";
-import Clock from "/src/assets/clock.png";
-import Busket from "/src/assets/buscek.png";
-import Cat from "/src/assets/cat.png";
+import Bootle from "/src/assets/bootle.png";
+import Backpack from "/src/assets/backpackone.png";
+import Mashala from "/src/assets/masala.png";
+import Bag from "/src/assets/bag.png";
 
 // ================
 import "slick-carousel/slick/slick.css";
@@ -36,22 +36,22 @@ const NewArrivals = () => {
         <div className="-mx-3">
           <Slider {...settings}>
             <div>
-              <Product productImg={Wacth} bdgText={"New"} />
+              <Product productImg={Bootle} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Clock} bdgText={"New"} />
+              <Product productImg={Backpack} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Busket} bdgText={"New"} />
+              <Product productImg={Mashala} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Cat} bdgText={"New"} />
+              <Product productImg={Bag} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Wacth} bdgText={"New"} />
+              <Product productImg={Bootle} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Busket} bdgText={"New"} />
+              <Product productImg={Backpack} bdgText={"New"} />
             </div>
           </Slider>
         </div>
