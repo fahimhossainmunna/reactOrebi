@@ -3,10 +3,10 @@ import React from "react";
 import Container from "../Container";
 import Flex from "../Flex";
 import Product from "../Product";
-import Bootle from "/src/assets/bootle.png";
-import Backpack from "/src/assets/backpackone.png";
-import Mashala from "/src/assets/masala.png";
-import Bag from "/src/assets/bag.png";
+import Cap from "/src/assets/cap.png";
+import Table from "/src/assets/table.png";
+import Headphne from "/src/assets/headphne.png";
+import Sunglass from "/src/assets/sunglass.png";
 
 // ================
 import "slick-carousel/slick/slick.css";
@@ -17,7 +17,7 @@ import PrevArrow from "../PrevArrow";
 // ================
 
 // =====================
-const OurBestsellers = () => {
+const SpecialOffers = () => {
   var settings = {
     dots: false,
     infinite: true,
@@ -28,7 +28,7 @@ const OurBestsellers = () => {
     prevArrow: <PrevArrow />,
   };
   return (
-    <div className="py-6">
+    <div className="pb-[100px]">
       <Container>
         <h3 className="text-[39px] font-bold text-menuHover my-[50px]">
           Our Bestsellers
@@ -36,22 +36,22 @@ const OurBestsellers = () => {
         <div className="-mx-3">
           <Slider {...settings}>
             <div>
-              <Product productImg={Bootle} bdgText={"New"} />
+              <Product productImg={Cap} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Backpack} bdgText={"New"} />
+              <Product productImg={Table} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Mashala} bdgText={"New"} />
+              <Product productImg={Headphne} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Bag} bdgText={"New"} />
+              <Product productImg={Sunglass} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Bootle} bdgText={"New"} />
+              <Product productImg={Table} bdgText={"New"} />
             </div>
             <div>
-              <Product productImg={Backpack} bdgText={"New"} />
+              <Product productImg={Headphne} bdgText={"New"} />
             </div>
           </Slider>
         </div>
@@ -60,4 +60,4 @@ const OurBestsellers = () => {
   );
 };
 
-export default OurBestsellers;
+export default SpecialOffers;

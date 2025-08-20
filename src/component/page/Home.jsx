@@ -5,6 +5,7 @@ import Ads from '../layout/Ads'
 import NewArrivals from '../layout/NewArrivals'
 import OurBestsellers from '../layout/OurBestsellers'
 import AdsTwo from '../layout/AdsTwo'
+import SpecialOffers from '../layout/SpecialOffers'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
    <NewArrivals/>
    <OurBestsellers/>
    <AdsTwo/>
+   <SpecialOffers/>
    </>
   )
 }
