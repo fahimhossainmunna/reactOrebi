@@ -50,6 +50,11 @@ const Header = () => {
                     Journal
                   </li>
                 </Link>
+                <Link to={"signup"}>
+                  <li className="hover:text-menuHover hover:font-bold duration-200">
+                    Sign up
+                  </li>
+                </Link>
               </ul>
             </div>
           </Flex>

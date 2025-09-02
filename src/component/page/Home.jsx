@@ -7,6 +7,7 @@ import OurBestsellers from '../layout/OurBestsellers'
 import AdsTwo from '../layout/AdsTwo'
 import SpecialOffers from '../layout/SpecialOffers'
 
+
 const Home = () => {
   return (
    <>

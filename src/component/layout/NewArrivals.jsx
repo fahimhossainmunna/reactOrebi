@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Container from "../Container";
 import Flex from "../Flex";
@@ -15,9 +15,19 @@ import Slider from "react-slick";
 import NextArrow from "../NextArrow";
 import PrevArrow from "../PrevArrow";
 // ================
+import axios from "axios";
+// ================
 
 // =====================
 const NewArrivals = () => {
+  let [allData, setAllData] = useState([]);
+  useEffect(() => {
+    async function alldatas() {
+      let data = await axios.get("https://dummyjson.com/products");
+    }
+    alldatas();
+  }, []);
+
   var settings = {
     dots: false,
     infinite: true,
@@ -35,24 +45,16 @@ const NewArrivals = () => {
         </h3>
         <div className="-mx-3">
           <Slider {...settings}>
+            {allData.map((item)=>
             <div>
-              <Product productImg={Wacth} bdgText={"New"} />
+              <Product
+                productImg={Wacth}
+                bdgText={"New"}
+                price={"$20"}
+                title={"Basic Crew Neck Tee"}
+              />
             </div>
-            <div>
-              <Product productImg={Clock} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Busket} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Cat} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Wacth} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Busket} bdgText={"New"} />
-            </div>
+        )}
           </Slider>
         </div>
       </Container>

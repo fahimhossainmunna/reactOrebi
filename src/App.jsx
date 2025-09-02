@@ -8,6 +8,7 @@ import Shop from './component/page/Shop'
 import Contacts from './component/page/Contacts'
 import Journal from './component/page/Journal'
 import Error from './component/page/Error'
+import SignUp from './component/page/SignUp'
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
     <Route path="shop" element={<Shop/>}/>
     <Route path="contacts" element={<Contacts/>}/>
     <Route path="journal" element={<Journal/>}/>
+    <Route path="signup" element={<SignUp/>}/>
     <Route path="*" element={<Error/>}/>
 
     </Route>
