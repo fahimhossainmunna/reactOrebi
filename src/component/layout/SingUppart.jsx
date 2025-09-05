@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../Container";
 import { FaAngleRight } from "react-icons/fa";
 
@@ -17,6 +16,7 @@ const SingUppart = () => {
               <span>
                 <FaAngleRight />
               </span>
+
               <h3>Sign up</h3>
             </div>
             <div className="text-[16px] text-[#767676] font-sans leading-[30px] w-[644px] pb-[60px]">
@@ -26,7 +26,7 @@ const SingUppart = () => {
                 text ever since the.
               </p>
             </div>
-              <div className="border-b border-b-[#D8D8D8]"></div>
+            <div className="border-b border-b-[#D8D8D8]"></div>
           </div>
         </Container>
       </div>

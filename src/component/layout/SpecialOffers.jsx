@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Container from "../Container";
 import Flex from "../Flex";
@@ -14,10 +14,21 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import NextArrow from "../NextArrow";
 import PrevArrow from "../PrevArrow";
+import axios from "axios";
 // ================
 
 // =====================
 const SpecialOffers = () => {
+  let [setData, setAllData] = useState([]);
+  useEffect(() => {
+    async function setData() {
+      let data = await axios.get("https://dummyjson.com/products");
+      setAllData(data.data.products);
+    }
+    setData();
+  }, []);
+
+  // ==========
   var settings = {
     dots: false,
     infinite: true,
@@ -31,28 +42,20 @@ const SpecialOffers = () => {
     <div className="pb-[100px]">
       <Container>
         <h3 className="text-[39px] font-bold text-menuHover my-[50px]">
-          Our Bestsellers
+          Special Offers
         </h3>
         <div className="-mx-3">
           <Slider {...settings}>
-            <div>
-              <Product productImg={Cap} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Table} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Headphne} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Sunglass} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Table} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Headphne} bdgText={"New"} />
-            </div>
+            {setData.map((item) => (
+              <div className="">
+                <Product
+                  productImg={item.thumbnail}
+                  price={`$${item.price}`}
+                  title={item.title}
+                  bdgText={"New"}
+                />
+              </div>
+            ))}
           </Slider>
         </div>
       </Container>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Container from "../Container";
 import Flex from "../Flex";
@@ -14,10 +14,24 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import NextArrow from "../NextArrow";
 import PrevArrow from "../PrevArrow";
+import axios from "axios";
 // ================
 
 // =====================
 const OurBestsellers = () => {
+  let [allData,setAllData]=useState([])
+  useEffect(()=>{
+    async function allData() {
+      let data =await axios.get("https://dummyjson.com/products")
+      setAllData(data.data.products)
+
+    }
+    allData()
+  })
+
+
+
+
   var settings = {
     dots: false,
     infinite: true,
@@ -35,24 +49,18 @@ const OurBestsellers = () => {
         </h3>
         <div className="-mx-3">
           <Slider {...settings}>
-            <div>
-              <Product productImg={Bootle} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Backpack} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Mashala} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Bag} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Bootle} bdgText={"New"} />
-            </div>
-            <div>
-              <Product productImg={Backpack} bdgText={"New"} />
-            </div>
+            {
+              allData.map((item)=>(
+                <div className="">
+                  <Product productImg={item.thumbnail}
+                  title={item.title}
+                  price={`$${item.price}`}
+                  bdgText={"New"}
+                  />
+                </div>
+              ))
+            }
+        
           </Slider>
         </div>
       </Container>

@@ -18,7 +18,7 @@ const NewCustomer = () => {
                 <input
                   type="text"
                   placeholder="4279 Zboncak Port Suite 6212"
-                  className="text=[14px] text-[#767676] font-sans "
+                  className="text=[14px] text-[#767676] font-sans w-full"
                 />
                 <div className="mt-[15px] border-b border-b-[#D8D8D8] w-[507px]"></div>
               </div>
@@ -30,7 +30,7 @@ const NewCustomer = () => {
                   <input
                     type="text"
                     placeholder="—"
-                    className="text=[14px] text-[#767676] font-sans "
+                    className="text=[14px] text-[#767676] font-sans w-full"
                   />
                   <div className="mt-[15px] border-b border-b-[#D8D8D8] w-[507px]"></div>
                 </div>
@@ -44,7 +44,7 @@ const NewCustomer = () => {
                 <input
                   type="email"
                   placeholder="Your city"
-                  className="text=[14px] text-[#767676] font-sans w-[300px]"
+                  className="text=[14px] text-[#767676] font-sans w-full"
                 />
                 <div className="mt-[15px] border-b border-b-[#D8D8D8] w-[507px]"></div>
               </div>
@@ -56,7 +56,7 @@ const NewCustomer = () => {
                   <input
                     type="number"
                     placeholder="05228"
-                    className="text=[14px] text-[#767676] font-sans  "
+                    className="text=[14px] text-[#767676] font-sans  w-full"
                   />
                   <div className="mt-[15px] border-b border-b-[#D8D8D8] w-[507px]"></div>
                 </div>

@@ -22,11 +22,24 @@ import axios from "axios";
 const NewArrivals = () => {
   let [allData, setAllData] = useState([]);
   useEffect(() => {
-    async function alldatas() {
+    async function allData() {
       let data = await axios.get("https://dummyjson.com/products");
-    }
-    alldatas();
+      setAllData(data.data.products)
+        }
+    allData();
   }, []);
+  // let [allData,setAllData]=useState([])
+  // useEffect(()=>{
+  //   async function alldatas() {
+  //       let data = await axios.get("https://dummyjson.com/products");
+  //       setAllData(data.data.products)
+  //     }
+  //     alldatas();
+  // }, []);
+
+  // let [allData, setAllData] = useState([]);
+
+  // useEffect(() => {
 
   var settings = {
     dots: false,
@@ -45,16 +58,16 @@ const NewArrivals = () => {
         </h3>
         <div className="-mx-3">
           <Slider {...settings}>
-            {allData.map((item)=>
-            <div>
-              <Product
-                productImg={Wacth}
-                bdgText={"New"}
-                price={"$20"}
-                title={"Basic Crew Neck Tee"}
-              />
-            </div>
-        )}
+            {allData.map((item) => (
+              <div>
+                <Product
+                  productImg={item.thumbnail}
+                  bdgText={"new"}
+                  price={item.price}
+                  title={item.title}
+                />
+              </div>
+            ))}
           </Slider>
         </div>
       </Container>
