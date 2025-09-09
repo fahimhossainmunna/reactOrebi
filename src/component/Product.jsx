@@ -6,9 +6,21 @@ import Flex from "./Flex";
 import { FaHeart } from "react-icons/fa";
 import { HiRefresh } from "react-icons/hi";
 import { RiShoppingCartFill } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../slice/addToCartslice";
 
 // =====================
 const Product = ({ productImg, bdgText, price, title }) => {
+  let dispatch = useDispatch()
+  let handleAddtocart=()=>{
+    dispatch(addtocart({
+      title: title,
+      price: price,
+      productImg: productImg,
+      quantity: 1,
+    })) 
+    
+  }
   return (
     <>
       <div className="relative px-3">
@@ -27,7 +39,7 @@ const Product = ({ productImg, bdgText, price, title }) => {
             </h3>
             <HiRefresh />
           </div>
-          <div className="flex items-center gap-x-3 justify-end">
+          <div className="flex items-center gap-x-3 justify-end" onClick={handleAddtocart}>
             <h3 className="text-[16px] text-menuColor hover:text-menuHover hover:font-bold duration-300">
               Add to Cart
             </h3>

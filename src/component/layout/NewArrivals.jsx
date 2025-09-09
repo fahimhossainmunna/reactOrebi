@@ -63,7 +63,7 @@ const NewArrivals = () => {
                 <Product
                   productImg={item.thumbnail}
                   bdgText={"new"}
-                  price={item.price}
+                  price={`$${item.price}`}
                   title={item.title}
                 />
               </div>

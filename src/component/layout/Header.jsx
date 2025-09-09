@@ -9,8 +9,13 @@ import { FaSearch } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa6";
+import { ImCross } from "react-icons/im";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  let [showCart, setShowCart] = useState(false);
+  let data = useSelector((state) => state.addtocart.value);
+
   let [show, setshow] = useState(false);
   const handleBtn = () => {
     setshow(!show);
@@ -115,24 +120,73 @@ const Header = () => {
               <FaSearch className="absolute right-5 top-1/2 -translate-y-1/2" />
             </div>
 
-            <div className="flex items-center gap-x-3">
+            <div className="flex items-center gap-x-3 relative">
               <div className="flex items-center">
-               <button onClick={handleBtnn} className="flex" >
-                 <FaUserAlt />
-                <FaCaretDown />
-               </button>
-               {sshow &&
-               <div className="bg-[#2B2B2B] text-white  absolute top-[22%] right-25 z-10 transition-all  rounded-[5px] w-[200px] text-center">
-                <ul>
-                  <li className="hover:bg-[#F0F0F0] hover:text-[#262626] transition-all duration-300  py-2">My Account</li>
-                  <li className="hover:bg-[#F0F0F0] hover:text-[#262626] transition-all duration-300  py-2">Log Out</li>
-                </ul>
-               </div>
-               }
+                <button onClick={handleBtnn} className="flex">
+                  <FaUserAlt />
+                  <FaCaretDown />
+                </button>
+                {sshow && (
+                  <div className="bg-[#2B2B2B] text-white  absolute top-[99%] right-[30px] z-10 transition-all  rounded-[5px] w-[200px] text-center">
+                    <ul>
+                      <li className="hover:bg-[#F0F0F0] hover:text-[#262626] transition-all duration-300  py-2">
+                        My Account
+                      </li>
+                      <li className="hover:bg-[#F0F0F0] hover:text-[#262626] transition-all duration-300  py-2">
+                        Log Out
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </div>
-              <FaCartPlus />
+              <FaCartPlus onClick={() => setShowCart(!showCart)} />
             </div>
           </Flex>
+          {showCart && (
+            <>
+            <div className="relative">
+            <div
+              className=" w-[800px] bg-[#ECECEC]  z-10 absolute right-0 top-0"
+              onClick={() => setShowCart(!showCart)}
+            >
+              <ImCross />
+
+              <ul>
+                <div className="w-full py-5 bg-[#A0BBBA] rounded-[5px] ">
+                  <ul className="flex text-center justify-between items-center">
+                    <li className="w-[20%] m-auto text-black font-bold text-[16px]">
+                      Name
+                    </li>
+                    <li className="w-[25%] m-auto text-black font-bold text-[16px]">
+                      price
+                    </li>
+                    <li className="w-[20%] m-auto text-black font-bold text-[16px]">
+                      Quantity
+                    </li>
+                    <li className="w-[15%] m-auto text-black font-bold text-[16px]">
+                      Image
+                    </li>
+                    <li className="w-[15%] m-auto text-black font-bold text-[16px] ">
+                      Total
+                    </li>
+                  </ul>
+                </div>
+                {data.map((item) => (
+                  <div className="flex justify-between p-5 border border-black rounded-[5px]">
+                    <li className="w-[29%] m-auto">{item.title}</li>
+                    <li className="w-[20%] m-auto">{item.price}</li>
+                    <li className="w-[15%] m-auto">{item.quantity}</li>
+                    <li className="w-[15%] m-auto">
+                      <img className="" src={item.productImg} />
+                    </li>
+                    <li className="w-[10%] m-auto">{(item.price * item.quantity)}</li>
+                  </div>
+                ))}
+              </ul>
+            </div>
+            </div>
+          </>
+          )}
         </Container>
       </div>
     </>
