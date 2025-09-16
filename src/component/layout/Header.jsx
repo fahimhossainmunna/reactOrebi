@@ -12,6 +12,7 @@ import { FaCartPlus } from "react-icons/fa6";
 import { ImCross } from "react-icons/im";
 import { useSelector } from "react-redux";
 
+
 const Header = () => {
   let [showCart, setShowCart] = useState(false);
   let data = useSelector((state) => state.addtocart.value);
@@ -146,7 +147,7 @@ const Header = () => {
             <>
             <div className="relative">
             <div
-              className=" w-[800px] bg-[#ECECEC]  z-10 absolute right-0 top-0"
+              className=" w-[800px] bg-[#F5F5F3]  rounded-[5px] z-10 absolute right-0 top-0"
               onClick={() => setShowCart(!showCart)}
             >
               <ImCross />
