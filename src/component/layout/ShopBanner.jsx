@@ -40,7 +40,7 @@ const ShopBanner = () => {
                 transition={{ duration: 0.5 }}
                 className="rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 
                  shadow-md p-4 transition-all duration-300 
-                 hover:shadow-2xl hover:scale-105 hover:from-[#BCC7D9] hover:to-[#9CCCE1]"
+                 hover:shadow-2xl hover:scale-105 hover:from-[#d4d5d6] hover:to-[#dcdcdc] select-none"
               >
                 <Product
                   productImg={item.thumbnail}

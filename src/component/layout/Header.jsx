@@ -182,11 +182,11 @@ const Header = () => {
             {/* Header */}
             <div className="w-full py-5 bg-[#032936] text-white ">
               <ul className="flex text-center justify-between items-center px-4">
-                <li className="w-[20%] font-bold">Name</li>
-                <li className="w-[20%] font-bold">Price</li>
-                <li className="w-[15%] font-bold">Quantity</li>
-                <li className="w-[20%] font-bold">Image</li>
-                <li className="w-[15%] font-bold">Total</li>
+                <li className="w-[20%] border-r-1 font-bold">Name</li>
+                <li className="w-[20%] border-r-1 font-bold">Price</li>
+                <li className="w-[15%] border-r-1 font-bold">Quantity</li>
+                <li className="w-[20%] border-r-1 font-bold">Image</li>
+                <li className="w-[15%]  font-bold">Total</li>
               </ul>
             </div>
 
