@@ -10,7 +10,7 @@ import Product from "../Product";
 const ShopBanner = () => {
   const [alldata, setAllData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage] = useState(8); // প্রতি পেজে কতগুলো প্রোডাক্ট দেখাবে
+  const [postPerPage] = useState(8); 
 
   useEffect(() => {
     async function fetchData() {
@@ -91,3 +91,4 @@ const ShopBanner = () => {
 };
 
 export default ShopBanner;
+
